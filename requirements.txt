@@ -1,0 +1,4 @@
+pynput==1.4
+pyserial==3.4
+python-xlib==0.25
+six==1.12.0
