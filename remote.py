@@ -5,13 +5,13 @@ def press(key):
     keyboard.press(key)
     keyboard.release(key)
 
-#press a key while holding super
+#press a key with super modifier key
 def super_press(key):
     keyboard.press(Key.cmd_r)
     keyboard.press(key)
     keyboard.release(key)
     keyboard.release(Key.cmd_r)
-    
+
 with serial.Serial('/dev/tty.usbserial-1410', 9600) as ser:
     keyboard = Controller()
     while(True):
