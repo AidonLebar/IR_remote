@@ -1,6 +1,8 @@
 import serial
 from pynput.keyboard import Key, Controller
 
+serial_path = '/dev/ttyUSB0'
+
 def press(key):
     keyboard.press(key)
     keyboard.release(key)
@@ -12,7 +14,7 @@ def super_press(key):
     keyboard.release(key)
     keyboard.release(Key.cmd_r)
 
-with serial.Serial('/dev/tty.usbserial-1410', 9600) as ser:
+with serial.Serial(serial_path, 9600) as ser:
     keyboard = Controller()
     while(True):
         button = str(ser.readline(), 'ascii').strip()
