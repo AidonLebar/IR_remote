@@ -7,11 +7,17 @@ def press(key):
     keyboard.press(key)
     keyboard.release(key)
 
-#press a key with super modifier key
+#press a key with super modifier key - MAC
 def super_press(key):
     keyboard.press(Key.cmd_r)
     press(key)
     keyboard.release(Key.cmd_r)
+
+#press a key with ctrl held
+def ctrl_press(key):
+    keyboard.press(Key.ctrl)
+    press(key)
+    keyboard.release(Key.ctrl)
 
 with serial.Serial(serial_path, 9600) as ser:
     keyboard = Controller()
@@ -35,3 +41,8 @@ with serial.Serial(serial_path, 9600) as ser:
             press(Key.right)
         if(button == "L"): #skip back
             press(Key.left)
+        if(button == "1"): #netflix fullscreen
+            press("f")
+        if(button == "2"): #VLC fullscreen and minimal interface
+            ctrl_press("h")
+            press(Key.f11)
