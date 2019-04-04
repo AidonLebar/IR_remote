@@ -46,3 +46,5 @@ with serial.Serial(serial_path, 9600) as ser:
         if(button == "2"): #VLC fullscreen and minimal interface
             ctrl_press("h")
             press(Key.f11)
+        if(button == "3"): #VLC subtitle
+            press("v")
