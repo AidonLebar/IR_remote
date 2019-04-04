@@ -22,20 +22,16 @@ with serial.Serial(serial_path, 9600) as ser:
         if(button == "U"): #volume up
             keyboard.press(Key.ctrl_r)
             keyboard.press(Key.shift_r)
-            keyboard.press(Key.up)
-            keyboard.release(Key.up)
+            press(Key.up)
             keyboard.release(Key.shift_r)
             keyboard.release(Key.ctrl_r)
         if(button == "D"): #volume down
             keyboard.press(Key.ctrl_r)
             keyboard.press(Key.shift_r)
-            keyboard.press(Key.down)
-            keyboard.release(Key.down)
+            press(Key.down)
             keyboard.release(Key.shift_r)
             keyboard.release(Key.ctrl_r)
         if(button == "R"): #skip forward
-            keyboard.press(Key.right)
-            keyboard.release(Key.right)
+            press(Key.right)
         if(button == "L"): #skip back
-            keyboard.press(Key.left)
-            keyboard.release(Key.left)
+            press(Key.left)
